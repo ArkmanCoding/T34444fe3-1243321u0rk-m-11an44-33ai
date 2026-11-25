@@ -1,0 +1,28 @@
+# ============================================
+# Turkmen AI - Security & Routing
+# ============================================
+
+# 1. جلوگیری از لیست شدن فایل‌ها در مرورگر (اگه index نداشته باشن)
+Options -Indexes
+
+# 2. بلاک کردن دسترسی مستقیم به پوشه‌های حساس
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    
+    # بلاک کردن دسترسی به پوشه بک‌اند
+    RewriteRule ^backend/ - [F,L]
+    
+    # بلاک کردن دسترسی به فایل‌های آپلودی و لاگ‌ها
+    RewriteRule ^storage/ - [F,L]
+    
+    # بلاک کردن دسترسی به فایل‌های دیتابیس (مثل فایل‌های SQL)
+    RewriteRule ^database/ - [F,L]
+</IfModule>
+
+# 3. بلاک کردن کامل فایل‌های مخفی (مثل .env و .git)
+<FilesMatch "^\.">
+    Require all denied
+</FilesMatch>
+
+# 4. تنظیم انکودینگ پیش‌فرض به UTF-8 برای جلوگیری از بهم ریختگی فارسی
+AddDefaultCharset UTF-8

@@ -1,0 +1,57 @@
+/* TODO: to be built together step by step */
+/* ============================================
+   Turkmen AI - CSS Reset
+   ============================================ */
+
+/* 1. صفر کردن حاشیه‌ها و پدینگ‌های پیش‌فرض */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* این خط خیلی مهمه، پایین توضیح می‌دم */
+}
+
+/* 2. تنظیمات پایه برای کل بدنه سایت (Body) */
+body {
+    font-family: var(--font-family); /* استفاده از فونت Vazirmatn که تو فایل قبلی ساختیم */
+    background-color: var(--ivory);  /* رنگ پس‌زمینه اصلی */
+    color: var(--navy);              /* رنگ متن اصلی */
+    line-height: 1.7;                /* فاصله بین خطوط برای خوانایی بهتر فارسی */
+    min-height: 100vh;               /* حداقل ارتفاع کل صفحه */
+    direction: rtl;                  /* راست‌چین کردن کل برنامه چون فارسیه */
+    -webkit-font-smoothing: antialiased; /* فونت‌ها رو تو مک و موبایل نرم‌تر می‌کنه */
+}
+
+/* 3. استایل پایه لینک‌ها */
+a {
+    color: var(--cobalt);
+    text-decoration: none; /* خط زیر لینک‌ها رو برمی‌داره */
+    transition: color var(--transition-speed);
+}
+
+a:hover {
+    color: var(--navy); /* وقتی موس رفت روی لینک، رنگش تیره‌تر می‌شه */
+}
+
+/* 4. استایل پایه دکمه‌ها */
+button {
+    font-family: inherit; /* دکمه‌ها هم فونت فارسی رو بگیرن */
+    cursor: pointer;      /* وقتی موس رفت روش، آیکون دست بشه */
+    border: none;         /* حاشیه‌های پیش‌فرض رو بردار */
+    background: transparent; /* پس‌زمینه پیش‌فرض رو بردار */
+}
+
+/* 5. جلوگیری از بیرون زدن عکس‌ها */
+img {
+    max-width: 100%; /* عکس از سایز کانتینرش بزرگ‌تر نشه */
+    display: block;
+}
+
+/* 6. حذف نقطه‌های لیست‌ها */
+ul, ol {
+    list-style: none;
+}
+
+/* 7. یکسان‌سازی فونت فرم‌ها */
+input, textarea, select {
+    font-family: inherit;
+}

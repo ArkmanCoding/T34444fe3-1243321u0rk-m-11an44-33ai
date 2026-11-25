@@ -1,0 +1,301 @@
+/* ============================================
+   Turkmen AI - Landing Page (Match Image)
+   ============================================ */
+
+.landing-body {
+    background-color: var(--ivory);
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+    font-family: var(--font-family);
+}
+
+/* دکوراسیون پس‌زمینه (ابرها و لکه‌های رنگی) */
+.bg-blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    z-index: 0;
+    opacity: 0.4;
+}
+.blob-teal { width: 500px; height: 500px; background: var(--teal); top: -100px; right: -150px; }
+.blob-gold { width: 400px; height: 400px; background: var(--gold); top: 300px; left: -100px; }
+
+/* هدر */
+.landing-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 5%;
+    position: relative;
+    z-index: 10;
+}
+.landing-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--navy);
+}
+.landing-nav {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--navy-soft);
+}
+.landing-nav a:hover { color: var(--cobalt); }
+.nav-auth-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--white);
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    box-shadow: var(--shadow-sm);
+}
+
+/* بخش هیرو */
+.hero-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 2rem 5% 4rem;
+    max-width: 1300px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
+    gap: 2rem;
+}
+
+.hero-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.badge {
+    background: var(--mist);
+    color: var(--cobalt);
+    padding: 6px 16px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.hero-text h1 {
+    font-size: 3.5rem;
+    line-height: 1.2;
+    color: var(--navy);
+    margin-bottom: 1rem;
+    font-weight: 800;
+}
+.hero-text h1 span { color: var(--cobalt); }
+
+.hero-text p {
+    font-size: 1.15rem;
+    color: var(--navy-soft);
+    margin-bottom: 2rem;
+    max-width: 90%;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+}
+.btn-primary {
+    background-color: var(--cobalt);
+    color: var(--white);
+    padding: 0.9rem 2rem;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 700;
+    box-shadow: 0 8px 20px rgba(52, 121, 201, 0.3);
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.btn-primary:hover { transform: translateY(-3px); background: var(--navy); }
+
+.btn-outline {
+    background-color: var(--white);
+    color: var(--navy);
+    padding: 0.9rem 2rem;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 700;
+    border: 1px solid #ddd;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.btn-outline:hover { border-color: var(--cobalt); color: var(--cobalt); }
+
+/* ۳ ویژگی زیر دکمه‌ها */
+.hero-features {
+    display: flex;
+    gap: 2rem;
+    font-size: 0.85rem;
+    color: var(--navy-soft);
+    font-weight: 500;
+    border-top: 1px solid #ddd;
+    padding-top: 1.5rem;
+    width: 100%;
+}
+.hero-features span { display: flex; align-items: center; gap: 6px; }
+
+/* تصویر هیرو (ربات) */
+.hero-graphic {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+.hero-graphic img {
+    width: 100%;
+    max-width: 550px;
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+/* خط جداکننده وسط */
+.divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    color: var(--navy-soft);
+    font-size: 0.9rem;
+    position: relative;
+    z-index: 10;
+}
+.divider::before, .divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: #ddd;
+}
+
+/* بخش نقش‌ها */
+.roles-section {
+    padding: 0 5% 5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
+}
+
+.roles-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+}
+
+.role-card {
+    background: var(--white);
+    padding: 1.5rem;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 20px rgba(23, 43, 70, 0.04);
+    border: 1px solid #eee;
+}
+
+.role-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(23, 43, 70, 0.1);
+    border-color: var(--mist);
+}
+
+.role-icon {
+    width: 50px;
+    height: 50px;
+    background: var(--mist);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.role-card h3 {
+    font-size: 1.1rem;
+    color: var(--navy);
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.role-card p {
+    font-size: 0.85rem;
+    color: var(--navy-soft);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.role-arrow {
+    margin-top: auto;
+    background: var(--cobalt);
+    color: var(--white);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+}
+
+/* ============================================
+   مودال (Modal)
+   ============================================ */
+.modal-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(23, 43, 70, 0.6);
+    backdrop-filter: blur(5px);
+    display: flex; justify-content: center; align-items: center;
+    opacity: 0; pointer-events: none; transition: opacity 0.3s ease; z-index: 1000;
+}
+.modal-overlay.active { opacity: 1; pointer-events: auto; }
+.modal-content {
+    background: var(--white); width: 90%; max-width: 450px;
+    border-radius: 25px; padding: 2rem; position: relative;
+    transform: translateY(20px); transition: transform 0.3s ease;
+    box-shadow: 0 20px 50px rgba(23, 43, 70, 0.2);
+}
+.modal-overlay.active .modal-content { transform: translateY(0); }
+.modal-close {
+    position: absolute; top: 15px; left: 15px; background: var(--ivory);
+    border: none; width: 35px; height: 35px; border-radius: 50%;
+    font-size: 1.2rem; cursor: pointer; color: var(--danger);
+}
+.modal-title { font-size: 1.4rem; color: var(--navy); margin-bottom: 1rem; }
+.modal-desc { color: var(--navy-soft); font-size: 0.95rem; line-height: 1.8; margin-bottom: 1.5rem; }
+
+/* ریسپانسیو */
+@media (max-width: 992px) {
+    .hero-section { grid-template-columns: 1fr; text-align: center; }
+    .hero-text { align-items: center; }
+    .hero-buttons { justify-content: center; width: 100%; }
+    .hero-features { flex-wrap: wrap; justify-content: center; }
+    .roles-grid { grid-template-columns: repeat(2, 1fr); }
+    .hero-graphic { display: none; }
+}
+@media (max-width: 576px) {
+    .hero-text h1 { font-size: 2.2rem; }
+    .hero-buttons { flex-direction: column; width: 100%; }
+    .roles-grid { grid-template-columns: 1fr; }
+    .landing-nav { display: none; }
+}
